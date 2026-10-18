@@ -1,0 +1,298 @@
+/* ==========================================
+BESTFRIENDCHAT
+MESSAGE.CSS
+HOME PAGE MATCHING DESIGN + NOTES SYSTEM
+========================================== */
+
+/* ==========================================
+SECTION 1: BASIC RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* ==========================================
+SECTION 2: HTML AND BODY
+========================================== */
+
+html,
+body {
+width: 100%;
+height: 100%;
+background: #050505;
+color: #FFFFFF;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+height: 100vh;
+height: 100dvh;
+overflow: hidden;
+overscroll-behavior: none;
+}
+
+/* ==========================================
+SECTION 3: TOP BAR
+Same as Home CSS
+========================================== */
+
+.top-bar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 70px;
+background: #11141D;
+border-bottom: 1px solid #292D39;
+z-index: 10000;
+isolation: isolate;
+}
+
+/* ==========================================
+SECTION 4: BESTFRIENDCHAT TITLE
+========================================== */
+
+.brand-title {
+position: absolute;
+left: 100px;
+top: 75%;
+transform: translateY(-50%);
+color: #FFFFFF;
+font-size: 25px;
+font-weight: 800;
+letter-spacing: -0.7px;
+white-space: nowrap;
+user-select: none;
+}
+
+.brand-title span {
+background: linear-gradient(
+100deg,
+#FF168D,
+#C000FF,
+#843CFF
+);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+
+/* ==========================================
+SECTION 5: NOTES BAR (TITLE PATTI KE NICHE)
+========================================== */
+
+.notes-bar {
+position: fixed;
+top: 70px;
+left: 0;
+width: 100%;
+height: 96px;
+padding: 0 16px;
+display: flex;
+align-items: center;
+background: #11141D;
+border-bottom: 1px solid #292D39;
+z-index: 9998;
+}
+
+/* ==========================================
+SECTION 6: MY NOTE (DP BOX + PLUS ICON)
+========================================== */
+
+.note-avatar-box {
+position: relative;
+width: 64px;
+height: 64px;
+flex-shrink: 0;
+}
+
+.note-avatar {
+display: block;
+width: 100%;
+height: 100%;
+padding: 2px;
+border: 2px solid #41485A;
+border-radius: 50%;
+background: #11141D;
+overflow: hidden;
+}
+
+.note-avatar img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 50%;
+}
+
+/* Plus icon */
+
+.note-add-btn {
+position: absolute;
+right: -3px;
+bottom: -3px;
+width: 24px;
+height: 24px;
+padding: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #FF168D, #843CFF);
+border: 2px solid #11141D;
+border-radius: 50%;
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+-webkit-appearance: none;
+appearance: none;
+touch-action: manipulation;
+}
+
+.note-add-btn svg {
+display: block;
+width: 11px;
+height: 11px;
+fill: none;
+stroke: #FFFFFF;
+stroke-width: 3;
+stroke-linecap: round;
+pointer-events: none;
+}
+
+.note-add-btn:active {
+transform: scale(0.88);
+}
+
+.note-add-btn:focus,
+.note-add-btn:focus-visible {
+outline: none;
+}
+
+/* ==========================================
+SECTION 8: BOTTOM NAVIGATION
+Same as Home CSS
+========================================== */
+
+.bottom-nav {
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+height: calc(56px + env(safe-area-inset-bottom, 0px));
+padding-bottom: env(safe-area-inset-bottom, 0px);
+display: flex;
+align-items: center;
+justify-content: space-around;
+background: #11141D;
+border-top: 1px solid #292D39;
+z-index: 10000;
+}
+
+/* ==========================================
+SECTION 9: NAVIGATION BUTTONS
+========================================== */
+
+.nav-btn {
+flex: 1;
+height: 56px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+margin: 0;
+background: transparent;
+border: none;
+color: #FFFFFF;
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+-webkit-appearance: none;
+appearance: none;
+touch-action: manipulation;
+}
+
+.nav-btn svg {
+display: block;
+width: 26px;
+height: 26px;
+fill: none;
+stroke: currentColor;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+pointer-events: none;
+transition: transform 100ms ease;
+}
+
+/* Tap animation */
+
+.nav-btn:active svg,
+.nav-btn:active .nav-profile-dp {
+transform: scale(0.86);
+}
+
+/* ==========================================
+SECTION 10: ACTIVE NAVIGATION ICON
+========================================== */
+
+/* Messages page par Messages icon active rahega */
+.nav-btn.active {
+color: #FF168D;
+}
+
+.nav-btn.active svg {
+fill: currentColor;
+}
+
+.nav-btn.active svg circle {
+fill: none;
+}
+
+/* Reels play icon filled rahe */
+
+.nav-play {
+fill: currentColor;
+}
+
+/* ==========================================
+SECTION 11: PROFILE DP
+Same as Home CSS
+========================================== */
+
+.nav-profile-dp {
+display: block;
+width: 28px;
+height: 28px;
+padding: 1.5px;
+border: 1.5px solid #41485A;
+border-radius: 50%;
+overflow: hidden;
+pointer-events: none;
+transition:
+transform 100ms ease,
+border-color 100ms ease;
+}
+
+.nav-profile-dp img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 50%;
+}
+
+.nav-btn.active .nav-profile-dp {
+border-color: #FFFFFF;
+}
+
+/* ==========================================
+SECTION 12: BUTTON FOCUS
+========================================== */
+
+.nav-btn:focus,
+.nav-btn:focus-visible {
+outline: none;
+}

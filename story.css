@@ -1,0 +1,231 @@
+/* ==========================================
+   BESTFRIENDCHAT
+   STORY.CSS
+========================================== */
+
+
+/* ==========================================
+   SECTION 1: BASIC RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================================
+   SECTION 2: HTML AND BODY
+========================================== */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #050505;
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+
+/* ==========================================
+   SECTION 3: TOP BAR
+========================================== */
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  background: #11141D;
+  border-bottom: 1px solid #292D39;
+
+  z-index: 10000;
+  isolation: isolate;
+}
+
+
+/* ==========================================
+   SECTION 4: BESTFRIENDCHAT TITLE
+========================================== */
+
+.brand-title {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+
+  transform: translate(-50%, -50%);
+
+  color: #FFFFFF;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+
+  white-space: nowrap;
+  user-select: none;
+}
+
+.brand-title span {
+  background: linear-gradient(
+    100deg,
+    #FF168D,
+    #C000FF,
+    #843CFF
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* ==========================================
+   SECTION 5: STORY TITLE STRIP
+========================================== */
+
+.story-strip {
+  position: fixed;
+  top: 70px;
+  left: 0;
+
+  width: 100%;
+  height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 16px;
+
+  background: #11141D;
+  border-bottom: 1px solid #292D39;
+
+  z-index: 100;
+}
+
+
+/* ==========================================
+   SECTION 6: STORY BACK BUTTON
+========================================== */
+
+.story-back-button {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1A1F2B;
+  color: #FFFFFF;
+
+  border: 1px solid #34394A;
+  border-radius: 9px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  outline: none;
+  box-shadow: none;
+
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.story-back-button svg {
+  display: block;
+
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.story-back-button:active {
+  transform: translateY(-50%) scale(0.92);
+  background: #292D39;
+}
+
+
+/* ==========================================
+   SECTION 7: STORY TITLE
+========================================== */
+
+.story-strip .notification-strip-title {
+  position: absolute;
+  left: 58px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  margin: 0;
+  padding: 0;
+
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+
+  text-align: left;
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   SECTION 8: STORY CONTENT AREA
+========================================== */
+
+.story-page-content {
+  position: fixed;
+  top: 121px;
+  left: 0;
+  right: 0;
+
+  bottom: calc(
+    56px + env(safe-area-inset-bottom, 0px)
+  );
+
+  width: 100%;
+  padding: 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #050505;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  overscroll-behavior-y: contain;
+}
+
+.story-page-content::-webkit-scrollbar {
+  display: none;
+}

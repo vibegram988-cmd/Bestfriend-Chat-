@@ -1,0 +1,484 @@
+/* ==========================================
+BESTFRIENDCHAT
+NOTIFICATION.CSS
+========================================== */
+
+/* ==========================================
+SECTION 1: BASIC RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+-webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================
+SECTION 2: HTML AND BODY
+========================================== */
+
+html,
+body {
+width: 100%;
+height: 100%;
+background: #050505;
+color: #FFFFFF;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+height: 100vh;
+height: 100dvh;
+overflow: hidden;
+overscroll-behavior: none;
+}
+
+/* ==========================================
+SECTION 3: TOP BAR
+========================================== */
+
+.top-bar {
+position: fixed;
+top: 0;
+left: 0;
+
+width: 100%;
+height: 70px;
+
+background: #11141D;
+border-bottom: 1px solid #292D39;
+
+z-index: 10000;
+isolation: isolate;
+}
+
+/* ==========================================
+SECTION 4: BESTFRIENDCHAT TITLE
+CENTERED - 25PX
+========================================== */
+
+.brand-title {
+position: absolute;
+left: 50%;
+top: 70%;
+
+transform: translate(-50%, -50%);
+
+color: #FFFFFF;
+font-size: 25px;
+font-weight: 800;
+letter-spacing: -0.7px;
+
+white-space: nowrap;
+user-select: none;
+}
+
+.brand-title span {
+background: linear-gradient(
+100deg,
+#FF168D,
+#C000FF,
+#843CFF
+);
+
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+SECTION 5: NOTIFICATION TITLE STRIP
+========================================== */
+
+.icons-bar-background {
+position: fixed;
+top: 70px;
+left: 0;
+
+width: 100%;
+height: 51px;
+
+display: flex;
+align-items: center;
+justify-content: flex-end;
+
+padding: 0 16px;
+
+background: #11141D;
+border-bottom: 1px solid #292D39;
+
+z-index: 100;
+}
+
+/* ==========================================
+SECTION 6: BACK BUTTON
+========================================== */
+
+.notification-back-button {
+position: absolute;
+left: 12px;
+top: 50%;
+
+transform: translateY(-50%);
+
+width: 36px;
+height: 36px;
+padding: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: #1A1F2B;
+color: #FFFFFF;
+
+border: 1px solid #34394A;
+border-radius: 9px;
+
+appearance: none;
+-webkit-appearance: none;
+
+outline: none;
+box-shadow: none;
+cursor: pointer;
+}
+
+.notification-back-button svg {
+display: block;
+width: 21px;
+height: 21px;
+flex-shrink: 0;
+}
+
+.notification-back-button:active {
+transform: translateY(-50%) scale(0.92);
+background: #292D39;
+}
+
+/* ==========================================
+SECTION 7: NOTIFICATION TITLE
+========================================== */
+
+.notification-strip-title {
+margin: 0;
+padding: 0;
+
+color: #FFFFFF;
+font-family: Arial, Helvetica, sans-serif;
+
+font-size: 17px;
+font-weight: 700;
+line-height: 1;
+
+text-align: right;
+white-space: nowrap;
+}
+
+/* ==========================================
+SECTION 8: NOTIFICATION CONTENT AREA
+========================================== */
+
+.notification-container {
+position: fixed;
+top: 121px;
+left: 0;
+right: 0;
+
+bottom: calc(
+56px + env(safe-area-inset-bottom, 0px)
+);
+
+width: 100%;
+padding: 12px;
+
+overflow-y: auto;
+overflow-x: hidden;
+
+background: #050505;
+
+scrollbar-width: none;
+-ms-overflow-style: none;
+overscroll-behavior-y: contain;
+}
+
+.notification-container::-webkit-scrollbar {
+display: none;
+}
+
+/* ==========================================
+SECTION 9: NOTIFICATION ITEM
+FUTURE USE
+========================================== */
+
+.notification-item {
+display: flex;
+align-items: center;
+gap: 12px;
+
+width: 100%;
+min-height: 72px;
+padding: 10px;
+margin-bottom: 8px;
+
+background: #11141D;
+border: 1px solid #292D39;
+border-radius: 12px;
+
+transition:
+transform 0.15s ease,
+background 0.15s ease;
+}
+
+.notification-item:active {
+transform: scale(0.98);
+background: #1A1F2B;
+}
+
+/* ==========================================
+SECTION 10: NOTIFICATION AVATAR
+========================================== */
+
+.notification-avatar {
+flex-shrink: 0;
+
+width: 46px;
+height: 46px;
+
+border-radius: 50%;
+object-fit: cover;
+
+background: #292D39;
+border: 1px solid #383D4B;
+}
+
+/* ==========================================
+SECTION 11: NOTIFICATION TEXT
+========================================== */
+
+.notification-text {
+flex: 1;
+min-width: 0;
+
+color: #EDEEF3;
+font-size: 13px;
+line-height: 1.5;
+
+overflow-wrap: anywhere;
+}
+
+.notification-text strong {
+color: #FFFFFF;
+font-weight: 700;
+}
+
+.notification-time {
+display: block;
+margin-top: 4px;
+
+color: #858B9B;
+font-size: 11px;
+}
+
+/* ==========================================
+SECTION 12: NOTIFICATION ACTION BUTTON
+========================================== */
+
+.notification-action {
+flex-shrink: 0;
+
+min-height: 32px;
+padding: 0 12px;
+
+background: #1A1F2B;
+color: #FFFFFF;
+
+border: 1px solid #34394A;
+border-radius: 8px;
+
+font-size: 12px;
+font-weight: 700;
+
+cursor: pointer;
+transition:
+transform 0.15s ease,
+background 0.15s ease;
+}
+
+.notification-action:active {
+transform: scale(0.92);
+background: #292D39;
+}
+
+/* ==========================================
+SECTION 13: BOTTOM NAVIGATION BAR
+========================================== */
+
+.bottom-nav {
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+
+height: calc(
+56px + env(safe-area-inset-bottom, 0px)
+);
+
+padding-bottom: env(safe-area-inset-bottom, 0px);
+
+display: flex;
+align-items: center;
+justify-content: space-around;
+
+background: #11141D;
+border-top: 1px solid #292D39;
+
+z-index: 10000;
+}
+
+/* ==========================================
+SECTION 14: BOTTOM NAVIGATION BUTTONS
+========================================== */
+
+.nav-btn {
+flex: 1;
+min-width: 0;
+height: 56px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 0;
+
+background: transparent;
+color: #FFFFFF;
+
+border: none;
+outline: none;
+border-radius: 0;
+
+cursor: pointer;
+
+transition:
+transform 0.15s ease,
+background 0.15s ease;
+}
+
+/* ==========================================
+SECTION 15: SVG NAVIGATION ICONS
+========================================== */
+
+.nav-btn svg {
+display: block;
+
+width: 26px;
+height: 26px;
+
+flex-shrink: 0;
+}
+
+/* ==========================================
+SECTION 16: PROFILE NAVIGATION IMAGE
+========================================== */
+
+.nav-profile-image {
+display: block;
+
+width: 28px;
+height: 28px;
+
+border-radius: 50%;
+object-fit: cover;
+
+border: 1px solid #383D4B;
+}
+
+/* ==========================================
+SECTION 17: NAVIGATION PRESS EFFECT
+========================================== */
+
+.nav-btn:active {
+transform: scale(0.92);
+background: #1A1F2B;
+}
+
+/* ==========================================
+SECTION 18: ACTIVE NAVIGATION
+========================================== */
+
+.nav-btn.active {
+color: #FF3B78;
+}
+
+.nav-btn.active svg {
+stroke: #FF3B78;
+}
+
+/* ==========================================
+SECTION 19: SMALL SCREEN ADJUSTMENTS
+========================================== */
+
+@media (max-width: 360px) {
+
+.brand-title {
+font-size: 25px;
+}
+
+.icons-bar-background {
+padding-left: 12px;
+padding-right: 12px;
+}
+
+.notification-back-button {
+left: 10px;
+width: 34px;
+height: 34px;
+}
+
+.notification-strip-title {
+font-size: 16px;
+}
+
+.notification-container {
+padding: 10px;
+}
+
+.notification-item {
+gap: 9px;
+padding: 8px;
+}
+
+.notification-avatar {
+width: 42px;
+height: 42px;
+}
+
+.notification-action {
+padding: 0 8px;
+}
+
+}
+
+/* Notification title: back button ke paas */
+
+.notification-strip-title {
+position: absolute;
+left: 58px;
+top: 50%;
+transform: translateY(-50%);
+
+margin: 0;
+padding: 0;
+
+color: #FFFFFF;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 17px;
+font-weight: 700;
+line-height: 1;
+
+text-align: left;
+white-space: nowrap;
+}
